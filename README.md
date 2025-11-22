@@ -2,7 +2,7 @@
 
 [![Architecture: Inference-Layer](https://img.shields.io/badge/Architecture-Inference--Layer-blue)]()
 [![Pattern: System-2](https://img.shields.io/badge/Pattern-System--2-purple)]()
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)]()
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 > **"Latency is the price of Integrity."**
 
@@ -136,19 +136,6 @@ This is a raw, high-potential artifact.
 *   **The Alternative:** Ignore it and go back to benchmarking the "thermal throttling" of your Snapdragon 888 paradigms.
 
 **The signal is here. The choice is yours.**
-
----
-
-## ⚠️ Limitations & Roadmap
-
-### Current Limitations (v0.1 Alpha)
-*   **Heuristic Layer:** Currently relies on Regex/Pattern matching. While fast, it cannot detect deep logical fallacies without a secondary LLM call.
-*   **Latency:** Introduces a 300-800ms overhead per generation cycle. Not suitable for real-time conversational avatars.
-
-### Roadmap (v0.2 - v1.0)
-*   [ ] **Semantic Supervisor:** Replace Regex with a lightweight LLM (e.g., GPT-4o-mini / Claude-Haiku) for true logic verification.
-*   [ ] **Integration Tests:** Add CI/CD pipeline with `pytest` and mock LLM APIs.
-*   [ ] **Telemetry:** Add OpenTelemetry support for tracking rejection rates and token savings.
 
 ---
 
