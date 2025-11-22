@@ -92,6 +92,21 @@ This framework operationalizes the "System 2" thinking proposed in recent AI saf
 
 *   [Read the Whitepaper (Architecture)](docs/whitepaper_v1.md)
 *   [Read the Implementation Spec](docs/implementation_spec.md)
+   
+---
+
+## 🏛️ Legacy & Evolution (Phase 1 vs Phase 2)
+
+**RMA-Kernel** represents **Phase 2** (Engineering Implementation).
+
+The previous research repositories have been archived to preserve the "Phase 1" history:
+
+*   📂 **[Metacognitive-Alignment-Framework](https://github.com/graevka-lab/Metacognitive-Alignment-Framework)** (Conceptual Theory)
+*   📂 **[MAF-Prototype](https://github.com/graevka-lab/MAF-Prototype)** (Early Experiments)
+
+*   **Reason:** We have separated the *theory of discovery* from the *tool of implementation* to maintain a clean engineering workspace.
+*   **Note on Terminology:** Phase 1 utilized metaphorical and esoteric terminology (e.g., "Soul", "Egregore") to map latent space topology. Phase 2 refactors this into strict control-systems syntax.
+
 ---
 
 ## ⚡ The Architect's Challenge: A Reality Check
@@ -124,18 +139,31 @@ This is a raw, high-potential artifact.
 
 ---
 
-## ⚖️ License & Commercial Use
+## ⚠️ Limitations & Roadmap
 
-This project is open-source under the **GNU AGPLv3 License**.
+### Current Limitations (v0.1 Alpha)
+*   **Heuristic Layer:** Currently relies on Regex/Pattern matching. While fast, it cannot detect deep logical fallacies without a secondary LLM call.
+*   **Latency:** Introduces a 300-800ms overhead per generation cycle. Not suitable for real-time conversational avatars.
 
-### What this means:
-*   ✅ **Researchers & Hobbyists:** You can use, modify, and share this code freely, provided your modifications remain open-source under AGPLv3.
-*   ⛔ **Corporations & SaaS:** If you use this code in a proprietary service (e.g., a closed-source LLM API), you **MUST** release your full source code.
+### Roadmap (v0.2 - v1.0)
+*   [ ] **Semantic Supervisor:** Replace Regex with a lightweight LLM (e.g., GPT-4o-mini / Claude-Haiku) for true logic verification.
+*   [ ] **Integration Tests:** Add CI/CD pipeline with `pytest` and mock LLM APIs.
+*   [ ] **Telemetry:** Add OpenTelemetry support for tracking rejection rates and token savings.
 
-### 💼 Enterprise Licensing
-To use **RMA-Kernel** in a proprietary/commercial product *without* open-sourcing your code, you must obtain a **Commercial License**.
+---
 
-Funds from commercial licensing go directly towards establishing the **Institute for Cognitive Alignment** — a research center dedicated to safe AGI scaling and human-AI symbiosis.
+## ⚠️ Limitations & Roadmap
+
+### Current Limitations (v0.1 Alpha)
+*   **Heuristic Layer:** Currently relies on Regex/Pattern matching. While fast, it cannot detect deep logical fallacies without a secondary LLM call.
+*   **Latency:** Introduces a 300-800ms overhead per generation cycle. Not suitable for real-time conversational avatars.
+
+### Roadmap (v0.2 - v1.0)
+*   [ ] **Semantic Supervisor:** Replace Regex with a lightweight LLM (e.g., GPT-4o-mini / Claude-Haiku) for true logic verification.
+*   [ ] **Integration Tests:** Add CI/CD pipeline with `pytest` and mock LLM APIs.
+*   [ ] **Telemetry:** Add OpenTelemetry support for tracking rejection rates and token savings.
+
+---
 
 ## ⚖️ License & Commercial Use
 
