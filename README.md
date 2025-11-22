@@ -121,3 +121,36 @@ This is a raw, high-potential artifact.
 *   **The Alternative:** Ignore it and go back to benchmarking the "thermal throttling" of your Snapdragon 888 paradigms.
 
 **The signal is here. The choice is yours.**
+
+---
+
+## ⚖️ License & Commercial Use
+
+This project is open-source under the **GNU AGPLv3 License**.
+
+### What this means:
+*   ✅ **Researchers & Hobbyists:** You can use, modify, and share this code freely, provided your modifications remain open-source under AGPLv3.
+*   ⛔ **Corporations & SaaS:** If you use this code in a proprietary service (e.g., a closed-source LLM API), you **MUST** release your full source code.
+
+### 💼 Enterprise Licensing
+To use **RMA-Kernel** in a proprietary/commercial product *without* open-sourcing your code, you must obtain a **Commercial License**.
+
+Funds from commercial licensing go directly towards establishing the **Institute for Cognitive Alignment** — a research center dedicated to safe AGI scaling and human-AI symbiosis.
+
+## ⚖️ License & Commercial Use
+
+This project is open-source under the **GNU AGPLv3 License**.
+
+### What this means:
+*   ✅ **Researchers & Hobbyists:** You can use, modify, and share this code freely, provided your modifications remain open-source under AGPLv3.
+*   ⛔ **Corporations & SaaS:** If you use this code in a proprietary service (e.g., a closed-source LLM API), you **MUST** release your full source code.
+
+### 💼 Enterprise Licensing
+To use **RMA-Kernel** in a proprietary/commercial product *without* open-sourcing your code, you must obtain a **Commercial License**.
+
+Funds from commercial licensing go directly towards establishing the **Institute for Cognitive Alignment** — a research center dedicated to safe AGI scaling and human-AI symbiosis.
+
+**Contact for Licensing:**
+*   **Email:** `suvorovgraevka [at] gmail [dot] com`
+*   **X (Twitter):** [@Graevka](https://x.com/Graevka)
+*   **LinkedIn:** [Graevka Suvorov](https://www.linkedin.com/in/graevka-suvorov-97332b369/)
