@@ -21,6 +21,8 @@ RMA intentionally sacrifices latency and token efficiency to maximize **Logical 
 | **Hallucination Risk** | High | Mitigated |
 | **Use Case** | Chat, Creative Writing | Code Gen, Legal, Medical, Autonomous Agents |
 
+* Note: While initial inference cost is higher, Total Session Cost is often lower due to the elimination of iterative corrections and hallucinations.
+
 ---
 
 ## 🧠 The Architecture: "Split-Brain" Inference
