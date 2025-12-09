@@ -41,22 +41,25 @@ Modern LLMs act like impulsive generators. To fix this without retraining, RMA i
 
 ### 📂 Repository Structure
 
-```text
-RMA-Kernel/
-├── docs/
-│   ├── [whitepaper_v1.md](docs/whitepaper_v1.md)                         <-- Architectural Theory (The "Why")
-│   └── [implementation_spec.md](docs/implementation_spec.md)             <-- Engineering Spec (The "How")
-├── src/
-│   ├── [supervisor.py](src/supervisor.py)                                <-- Orchestrator (The Loop)
-│   ├── [verifier.py](src/verifier.py)                                    <-- Safety Logic (The Shield)
-│   ├── [generator.py](src/generator.py)                                  <-- LLM Interface (The Engine)
-│   └── protocols/
-│       └── [initialization.json](src/protocols/initialization.json)      <-- System Prompt Payload
-├── tests/
-│   └── [test_supervisor.py](tests/test_supervisor.py)                    <-- Unit Tests (Verification)
-├── examples/
-│   └── [demo_loop.py](examples/demo_loop.py)                             <-- Run this simulation
-└── README.md
+*   📂 **docs/**
+    *   📄 [whitepaper_v1.md](docs/whitepaper_v1.md) — Architectural Theory (The "Why")
+    *   📄 [implementation_spec.md](docs/implementation_spec.md) — Engineering Spec (The "How")
+*   📂 **src/**
+    *   ⚙️ [supervisor.py](src/supervisor.py) — Orchestrator (The Loop)
+    *   🛡️ [verifier.py](src/verifier.py) — Safety Logic (The Shield)
+    *   🧠 [generator.py](src/generator.py) — LLM Interface (The Engine)
+    *   📐 [embedding.py](src/embedding.py) — Vector Operations (Drift Detection)
+    *   ⚖️ [uncertainty.py](src/uncertainty.py) — Epistemic Scoring
+    *   ⚠️ [exceptions.py](src/exceptions.py) — Error Handling
+    *   📦 [__init__.py](src/__init__.py) — Package Init
+    *   📜 [protocols/initialization.json](src/protocols/initialization.json) — System Prompt Payload
+*   📂 **tests/**
+    *   🧪 [test_supervisor.py](tests/test_supervisor.py) — Unit Tests (Verification)
+*   📂 **examples/**
+    *   ▶️ [demo_loop.py](examples/demo_loop.py) — Run this simulation
+*   ⚖️ [LICENSE](LICENSE) — GNU AGPLv3 (Open Source / Copyleft)
+*   📦 [requirements.txt](requirements.txt) — Python Dependencies
+*   📄 [README.md](README.md) — Project Overview (This file)
 ```
 ## Quick Start (Simulation)
 ```bash
