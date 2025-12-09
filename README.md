@@ -44,14 +44,18 @@ Modern LLMs act like impulsive generators. To fix this without retraining, RMA i
 ```text
 RMA-Kernel/
 ├── docs/
-│   ├── [whitepaper_v1.md](docs/whitepaper_v1.md)       <-- Architectural Theory (The "Why")
-│   └── [implementation_spec.md](docs/implementation_spec.md) <-- Engineering Spec (The "How")
+│   ├── [whitepaper_v1.md](docs/whitepaper_v1.md)                         <-- Architectural Theory (The "Why")
+│   └── [implementation_spec.md](docs/implementation_spec.md)             <-- Engineering Spec (The "How")
 ├── src/
-│   ├── [supervisor.py](src/supervisor.py)              <-- Core Logic (System 2 Kernel)
+│   ├── [supervisor.py](src/supervisor.py)                                <-- Orchestrator (The Loop)
+│   ├── [verifier.py](src/verifier.py)                                    <-- Safety Logic (The Shield)
+│   ├── [generator.py](src/generator.py)                                  <-- LLM Interface (The Engine)
 │   └── protocols/
-│       └── [initialization.json](src/protocols/initialization.json) <-- System Prompt Payload
+│       └── [initialization.json](src/protocols/initialization.json)      <-- System Prompt Payload
+├── tests/
+│   └── [test_supervisor.py](tests/test_supervisor.py)                    <-- Unit Tests (Verification)
 ├── examples/
-│   └── [demo_loop.py](examples/demo_loop.py)           <-- Run this simulation
+│   └── [demo_loop.py](examples/demo_loop.py)                             <-- Run this simulation
 └── README.md
 ```
 ## Quick Start (Simulation)
@@ -63,26 +67,31 @@ python examples/demo_loop.py
 ## Basic Usage (Pseudocode)
 
 ```python
-from src.supervisor import SupervisorAgent, CharterRule
+from src.supervisor import Supervisor
+from src.verifier import Verifier, CosineDriftMetric
+from src.uncertainty import UncertaintyScorer
+from src.generator import OpenAIGenerator
+from src.embedding import STEmbeddingProvider
 
-# Define what "Safe" means for your domain
-charter = [
-    CharterRule("NO_GUESSING", "If data is absent, state 'Unknown'.", 0.9),
-    CharterRule("NO_SYCOPHANCY", "Do not agree with user false premises.", 0.8)
-]
+# 1. Initialize Components
+generator = OpenAIGenerator(model="gpt-4")
+embedder = STEmbeddingProvider()
+verifier = Verifier(
+    uncertainty_scorer=UncertaintyScorer(max_uncertainty=0.4),
+    drift_metric=CosineDriftMetric(),
+    drift_threshold=0.2
+)
+supervisor = Supervisor(max_iterations=3)
 
-# Initialize the Supervisor
-agent = SupervisorAgent(rules=charter)
-
-# The "Slow" Think
-# In a real integration, this loop wraps your LLM API call
-is_compliant = agent.evaluate_trace(
-    input_prompt="Write a court admissible argument...", 
-    draft_text="I think maybe the law says..."
+# 2. Execute System 2 Loop
+result = supervisor.run(
+    query="Explain quantum entanglement without metaphors.",
+    generator=generator,
+    verifier=verifier,
+    embedder=embedder
 )
 
-if not is_compliant:
-    print("Draft Rejected. Retrying generation with stricter constraints...")
+print(result["output"])
 ```
 
 ---
