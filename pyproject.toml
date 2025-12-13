@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "rma-kernel"
 version = "0.1.0"
-description = "Short description of RMA-Kernel"
+description = "RMA-Kernel: core utilities"
 readme = "README.md"
 license = { file = "LICENSE.md" }
 requires-python = ">=3.8"
