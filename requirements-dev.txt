@@ -1,0 +1,9 @@
+# Development / CI dependencies for RMA-Kernel
+pytest
+pytest-cov
+flake8
+black
+mypy
+isort
+codecov
+pre-commit
