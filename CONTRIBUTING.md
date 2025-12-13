@@ -1,24 +1,29 @@
-# CONTRIBUTING
+```markdown
+# Contributing
 
-Thank you for your interest in contributing to the project!
+Thank you for your interest in contributing to RMA-Kernel!
 
-### Core Contribution Steps:
-1.  **Fork** the repository and create a branch: `feature/your-feature` or `fix/issue-number`.
-2.  **Verify** that your branch passes all tests and static analysis locally:
-    *   `black .`
-    *   `isort --profile black .`
-    *   `flake8`
-    *   `mypy`
-    *   `pytest`
-3.  **Describe** your changes in the PR: what was changed, why, and provide a brief usage example if applicable.
-4.  **Add tests** for any new features or regression fixes.
-5.  **Sign the CLA** (if required by the organization).
+Guidelines
+- Fork the repository and create a branch named like feature/description or fix/issue-number.
+- Keep changes small and focused — one logical change per pull request.
+- Run local checks before opening a PR:
+  - Format: `black .`
+  - Sort imports: `isort --profile black .`
+  - Lint: `flake8`
+  - Type checks: `mypy src`
+  - Tests: `pytest`
 
-### Code Standards:
-*   Follow **PEP8**.
-*   Use **type hints** wherever possible.
-*   Write compact commits with meaningful messages.
+Pull Requests
+- Base branch: `main`.
+- Provide a clear description of what and why.
+- Link related issues.
+- Add or update tests for new behavior or bug fixes.
 
-### Review Process:
-*   PRs should generally contain **one logical task** or fix.
-*   For major changes, please **open an issue** first to discuss the design before implementation.
+Code style
+- Follow PEP 8.
+- Use type hints where appropriate.
+- Add docstrings for public functions/classes.
+
+Large changes
+- Open an issue first to discuss design for large or breaking changes.
+```
