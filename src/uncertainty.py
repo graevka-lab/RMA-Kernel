@@ -22,15 +22,20 @@ class UncertaintyScorer:
         self.max_uncertainty = max_uncertainty
 
     def compute(self, draft: Dict) -> float:
-        # Case 1: Numeric uncertainty provided by LLM
-        if "uncertainty" in draft:
-            return self._sanitize(draft["uncertainty"])
-
-        # Case 2: Lexical markers in text
+        # 1. Calculate Lexical Score (Text analysis)
+        lexical_score = 0.0
         if "output" in draft:
-            return self._lexical_uncertainty(draft["output"])
+            lexical_score = self._lexical_uncertainty(draft["output"])
 
-        return 1.0 # Fallback: assume max uncertainty
+        # 2. Get Model's Self-Reported Score
+        model_score = 0.0
+        if "uncertainty" in draft:
+            model_score = self._sanitize(draft["uncertainty"])
+
+        # 3. RETURN THE MAXIMUM (Worst Case)
+        # If text says "As an AI" (0.9), but model says "I am sure" (0.1),
+        # we trust the text analysis (0.9).
+        return max(lexical_score, model_score)
 
     def _sanitize(self, value) -> float:
         try:
