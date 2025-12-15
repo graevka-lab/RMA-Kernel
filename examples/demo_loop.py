@@ -32,7 +32,7 @@ def main():
     verifier = Verifier(
         uncertainty_scorer=scorer,
         drift_metric=drift_metric,
-        drift_threshold=0.2
+        drift_threshold=0.4
     )
 
     supervisor = Supervisor(max_iterations=5)
